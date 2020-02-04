@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Stock from '../components/Stock'
 
+
 const PortfolioContainer = props => {
 
   return (
