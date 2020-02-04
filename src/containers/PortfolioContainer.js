@@ -1,19 +1,16 @@
 import React, { Component } from 'react';
 import Stock from '../components/Stock'
 
-class PortfolioContainer extends Component {
+const PortfolioContainer = props => {
 
-  render() {
-    return (
-      <div>
-        <h2>My Portfolio</h2>
-          {
-            //render your portfolio stocks here
-          }
-      </div>
-    );
-  }
-
+  return (
+    <div>
+      <h2>My Portfolio</h2>
+        {
+          props.portfolio.map((s, i) => <Stock stock={s} key={i} handleStockClicked={props.handleStockClicked} origin='portfolio'/>)
+        }
+    </div>
+  );
 }
 
 export default PortfolioContainer;
