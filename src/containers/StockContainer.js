@@ -1,22 +1,18 @@
 import React, { Component } from 'react';
 import Stock from '../components/Stock'
 
-function StockContainer(props) {
+const StockContainer = props => {
 
   return (
     <div>
       <h2>Stocks</h2>
       {
-        props.stocks.map(s => (
-          <Stock 
-            stock={s}
-            origin='stocks'
-            onStockClick={props.onStockClick}
-          />
-        ))
+        props.stocks.map((s, i) => <Stock key={i} stock={s} handleStockClicked={props.handleStockClicked} origin="stocks" />)
       }
     </div>
   );
 }
+
+
 
 export default StockContainer;
